@@ -50,26 +50,27 @@ function cookieclicked () {
 function spawn_generator(x) {
   passive_income += x
 }
-function buy_generator(x, y) {
+function buy_generator(x, y, lvl) {
   if (cookies >= y) {
     spawn_generator(x)
     cookies -= y
+    eval(lvl + ' += 1')
   }
   else {
     alert('Not enough cookies!')
   }
 }
 document.getElementsByTagName('img')[0].onclick = cookieclicked
-document.getElementById('lvl1').onclick = function () { buy_generator(10, 25); if (cookies >= 25) { lvl1s += 1; } }
-document.getElementById('lvl2').onclick = function () { buy_generator(50, 125); if (cookies >= 125) { lvl2s += 1; } }
-document.getElementById('lvl3').onclick = function () { buy_generator(100, 250); if (cookies >= 250) { lvl3s += 1; } }
-document.getElementById('lvl4').onclick = function () { buy_generator(500, 650); if (cookies >= 650) { lvl4s += 1; } }
-document.getElementById('lvl5').onclick = function () { buy_generator(1000, 2500); if (cookies >= 2500) { lvl5s += 1; } }
-document.getElementById('lvl6').onclick = function () { buy_generator(2500, 5000); if (cookies >= 5000) { lvl6s += 1; } }
-document.getElementById('lvl7').onclick = function () { buy_generator(5000, 15000); if (cookies >= 15000) { lvl7s += 1; } }
-document.getElementById('lvl8').onclick = function () { buy_generator(10000, 40000); if (cookies >= 40000) { lvl8s += 1; } }
-document.getElementById('lvl9').onclick = function () { buy_generator(50000, 100000); if (cookies >= 100000) { lvl9s += 1; } }
-document.getElementById('lvl10').onclick = function () { buy_generator(1000000, 1500000); if (cookies >= 1500000) { lvl10s += 1; } }
-document.getElementById('lvl11').onclick = function () { buy_generator(5000000000, 10000000000); if (cookies >= 10000000000) { lvl11s += 1; } }
-document.getElementById('lvl12').onclick = function () { buy_generator(50000000000, 100000000000); if (cookies >= 100000000000) { lvl12s += 1; } }
-document.getElementById('lvl13').onclick = function () { buy_generator(10000000000, 500000000000); if (cookies >= 500000000000) { lvl13s += 1; } }
+document.getElementById('lvl1').onclick = function () { buy_generator(10, 25, 'lvl1s'); }
+document.getElementById('lvl2').onclick = function () { buy_generator(50, 125, 'lvl2s'); }
+document.getElementById('lvl3').onclick = function () { buy_generator(100, 250, 'lvl3s'); }
+document.getElementById('lvl4').onclick = function () { buy_generator(500, 650, 'lvl4s'); }
+document.getElementById('lvl5').onclick = function () { buy_generator(1000, 2500, 'lvl5s'); }
+document.getElementById('lvl6').onclick = function () { buy_generator(2500, 5000, 'lvl6s'); }
+document.getElementById('lvl7').onclick = function () { buy_generator(5000, 15000, 'lvl7s'); }
+document.getElementById('lvl8').onclick = function () { buy_generator(10000, 40000, 'lvl8s'); }
+document.getElementById('lvl9').onclick = function () { buy_generator(50000, 100000, 'lvl9s'); }
+document.getElementById('lvl10').onclick = function () { buy_generator(1000000, 1500000, 'lvl10s'); }
+document.getElementById('lvl11').onclick = function () { buy_generator(5000000000, 10000000000, 'lvl11s'); }
+document.getElementById('lvl12').onclick = function () { buy_generator(50000000000, 100000000000, 'lvl12s'); }
+document.getElementById('lvl13').onclick = function () { buy_generator(10000000000, 500000000000, 'lvl13s'); }
